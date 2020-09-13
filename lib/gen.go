@@ -15,18 +15,26 @@ func ReadJsonAndGen(jsonFile, outType, outFile string) {
 	if err != nil {
 		ozlog.Errorf("open file err")
 	}
+	defer file.Close()
+
+	fileinfo, err := file.Stat()
+	if err != nil {
+		ozlog.Errorf("read file stat err")
+	}
+	filesize := fileinfo.Size()
+
 	var (
 		json string
 	)
-	buf := make([]byte, 1024)
-	for {
-		len, _ := file.Read(buf)
-		if len == 0 {
-			break
-		}
-		json = `` + string(buf[:len]) + ``
-		ck := New(json, jsonFile, outType, outFile)
-		ck.json2Struct()
+	buf := make([]byte, filesize)
+
+	len, _ := file.Read(buf)
+	if len == 0 {
+		return
 	}
+	json = `` + string(buf[:len]) + ``
+	ck := New(json, jsonFile, outType, outFile)
+	ck.json2Struct()
+
 	return
 }

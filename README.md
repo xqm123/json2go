@@ -1,7 +1,5 @@
 # json2go
-[![Build Status](https://travis-ci.org/usth/json2go.svg?branch=master)](https://travis-ci.org/usthooz/json2go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/usthooz/json2go)](https://goreportcard.com/report/github.com/usthooz/json2go)
-[![GoDoc](http://godoc.org/github.com/usthooz/json2go?status.svg)](http://godoc.org/github.com/usthooz//json2go)
+https://github.com/xqm123/json2go.git
 
 Json转换为Go语言使用的结构体工具
 
@@ -11,11 +9,12 @@ Json转换为Go语言使用的结构体工具
 
 ### 使用
 
-#### 安装
 ```
-go get github.com/usthooz/json2go
-cd $GOPATH/github.com/usthooz/json2go
-go install
+go clone https://github.com/xqm123/json2go.git
+cd json2go
+go mod download
+cd example
+go build -o json2go ../main.go
 ```
 
 #### 使用方法
