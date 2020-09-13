@@ -125,9 +125,14 @@ func getVersion(name, detail string) {
 
 // genStruct
 func genStruct(name, detail string) {
+	if outType != lib.OutTypeForFile || outType != lib.OutTypeForPrint {
+		ozlog.Infof("outType only print or file, and default print")
+		return
+	}
 	ozlog.Infof("开始生成结构...")
-	if outType == lib.OutTypeForFile || outType == lib.OutTypeForPrint {
-		lib.ReadJsonAndGen(jsonFile, outType, outFile)
+	lib.ReadJsonAndGen(jsonFile, outType, outFile)
+
+	if outType == lib.OutTypeForFile {
 		ozlog.Infof("生成文件 %s", outFile)
 	}
 	ozlog.Infof("生成结构完成...")
