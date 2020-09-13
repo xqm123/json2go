@@ -127,8 +127,8 @@ func getVersion(name, detail string) {
 func genStruct(name, detail string) {
 	if len(outType) == 0 {
 		outType = lib.DefaultOutType
-		ozlog.Infof("outType%s", outType)
 	}
+	ozlog.Infof("outType%s", outType)
 	if outType != lib.OutTypeForFile || outType != lib.OutTypeForPrint {
 		ozlog.Infof("outType only print or file, and default print")
 		return
