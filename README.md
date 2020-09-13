@@ -18,24 +18,26 @@ go build -o json2go ../main.go
 ```
 
 #### 使用方法
-- 帮助信息
-![帮助](./example/img/1.png)
 
 - 新建json文件
 - 使用命令将json文件转换为Golang结构体，可选择输出到文件以及屏幕
+
+- 查看help
+```
+./json2go help
+```
+
 - 使用默认配置
+```
+./json2go gen_types
+```
 
-```
-json2go gen_types
-```
 - 输出到文件
-
 ```
-json2go gen_types -out_type=file -out_file=out_types.go
+./json2go gen_types -out_type=file -out_file=out_types.go
 ```
 
 - 输出到屏幕
-
 ```
-json2go gen_types -out_type=print
+./json2go gen_types -out_type=print
 ```

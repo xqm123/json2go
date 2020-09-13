@@ -85,7 +85,7 @@ func getHelp(name, detail string) {
 	}
 	outputHelp(fmt.Sprintf("Usage: %s <command>", exec), commands, []string{
 		"-json_file\t json文件, 默认json文件为json2go.json",
-		"-out_type\t 输出类型, 默认输出方式为输出到文件file/可选print、file",
+		"-out_type\t 输出类型, 默认输出方式为打印输出print/可选print、file",
 		"-out_file\t 输出文件, 默认输出文件为gen_json2go_types.go",
 	}, []string{
 		"json2go gen_types",
