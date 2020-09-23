@@ -10,7 +10,7 @@ Json转换为Go语言使用的结构体工具
 ### 使用
 
 ```
-go clone https://github.com/xqm123/json2go.git
+git clone https://github.com/xqm123/json2go.git
 cd json2go
 go env -w  GO111MODULE=on
 go mod download
